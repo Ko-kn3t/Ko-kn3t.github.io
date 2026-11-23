@@ -109,32 +109,6 @@ h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.6vw,30px);let
 .avatar{width:110px;height:110px;border-radius:14px;margin-top:22px;background:var(--bg-soft);border:1px solid var(--line);display:grid;place-items:center}
 .avatar .px{width:70px;height:75px}
 
-/* ---------- journey timeline ---------- */
-.tl{list-style:none;margin:26px 0 0;padding:0;position:relative}
-.tl::before{content:"";position:absolute;left:5px;top:10px;bottom:10px;border-left:2px dotted var(--line-2)}
-.tl>li{position:relative;padding:0 0 34px 34px}
-.tl>li:last-child{padding-bottom:0}
-.tl>li::before{content:"";position:absolute;left:0;top:7px;width:12px;height:12px;background:var(--bg);border:2px solid var(--accent)}
-.tl>li.peak::before{background:var(--accent);box-shadow:0 0 0 5px var(--accent-bg)}
-.tl>li.next::before{border-style:dashed;border-color:var(--ink-3)}
-.tl-meta{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.tl-meta .label{font-family:var(--mono);font-size:12.5px;font-weight:400}
-.loc{font-size:13px;color:var(--ink-3)}
-.tl h3{font-family:var(--serif);font-weight:500;font-size:22px;letter-spacing:-.01em;margin:4px 0 0;line-height:1.3}
-.tl .role{font-size:14.5px;color:var(--ink-3);margin-top:2px}
-.tl p{font-family:var(--serif);font-size:17.5px;line-height:1.7;color:var(--ink);margin:10px 0 0}
-.learned{margin-top:12px;font-size:14px;color:var(--ink-2);line-height:1.9}
-.learned em{font-style:normal;font-weight:600;color:var(--accent);margin-right:6px}
-.cert-tag{display:inline-block;font-family:var(--mono);font-size:12px;padding:1px 8px;margin:0 4px 0 0;border:1px solid var(--line-2);border-radius:6px;color:var(--ink-2);background:var(--card);line-height:1.8}
-.peak-card{margin-top:14px;padding:22px 22px 8px;background:var(--card);border:1px solid var(--line);border-radius:14px}
-.peak-card .badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-bg);padding:3px 10px;border-radius:999px}
-.quests{list-style:none;margin:6px 0 0;padding:0}
-.quests li{display:grid;grid-template-columns:34px 1fr;padding:14px 0;border-top:1px solid var(--line)}
-.quests li:first-child{border-top:0}
-.quests .n{font-family:var(--mono);font-size:12.5px;color:var(--accent);padding-top:3px}
-.quests h4{font-family:var(--serif);font-weight:500;font-size:18px;margin:0}
-.quests p{font-family:var(--sans);font-size:14.5px;color:var(--ink-2);margin:2px 0 0;line-height:1.6}
-blockquote{margin:14px 0 0;padding:2px 0 2px 16px;border-left:2px solid var(--accent);font-family:var(--serif);font-style:italic;font-size:17.5px;color:var(--ink-2)}
 
 /* ---------- numbered list (Ascend + projects) ---------- */
 .list{list-style:none;margin:22px 0 0;padding:0;border-top:1px solid var(--line)}
@@ -154,6 +128,13 @@ blockquote{margin:14px 0 0;padding:2px 0 2px 16px;border-left:2px solid var(--ac
 .talk-body .cta{display:inline-block;margin-top:12px;color:var(--accent);font-weight:500;font-size:14.5px;text-decoration:underline;text-underline-offset:3px}
 
 /* ---------- experience ---------- */
+.xp{list-style:none;margin:22px 0 0;padding:0;border-top:1px solid var(--line)}
+.xp>li{padding:22px 0;border-bottom:1px solid var(--line)}
+.xp h3{font-family:var(--serif);font-weight:500;font-size:20px;margin:2px 0 0}
+.xp .co{font-size:14.5px;color:var(--ink-3)}
+.xp ul{margin:10px 0 0;padding-left:18px;color:var(--ink-2);font-size:15px}
+.xp ul li{margin:3px 0}
+.xp ul li::marker{color:var(--accent-2)}
 
 /* ---------- certifications ---------- */
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 4px}
@@ -214,7 +195,7 @@ blockquote{margin:14px 0 0;padding:2px 0 2px 16px;border-left:2px solid var(--ac
     </div>
     <nav class="tabs" aria-label="Sections">
       <a href="#top" class="on">Home</a>
-      <a href="#journey">Journey</a>
+      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#talk">Talk</a>
       <a href="#certifications">Certifications</a>
@@ -233,7 +214,7 @@ blockquote{margin:14px 0 0;padding:2px 0 2px 16px;border-left:2px solid var(--ac
         </div>
         <p class="tagline">Offensive Security Engineer / Penetration Tester <span class="caret" aria-hidden="true"></span></p>
         <div class="actions">
-          <a class="btn btn-solid" href="#journey">Read my journey</a>
+          <a class="btn btn-solid" href="#experience">Read my experience</a>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/kokn3t/" target="_blank" rel="noopener">Get in touch</a>
         </div>
       </div>
@@ -261,66 +242,6 @@ blockquote{margin:14px 0 0;padding:2px 0 2px 16px;border-left:2px solid var(--ac
   </section>
 
   <div class="divider" aria-hidden="true"><canvas class="px" data-scene="flag" style="left:14%"></canvas></div>
-
-  <section id="journey" class="rv">
-    <div class="sec-title"><canvas class="px" data-scene="ring" aria-hidden="true"></canvas><h2>Learning journey</h2></div>
-    <p class="sec-intro">Every role taught me something I didn't know on day one: new skills, a new culture and new ways of working.</p>
-    <hr class="rule">
-    <ol class="tl">
-      <li>
-        <div class="tl-meta"><span class="label">2014 – 2019</span><span class="loc">Magway, Myanmar</span></div>
-        <h3>Capture the Flag</h3>
-        <div class="role">University of Computer Studies, Magway · B.C.Sc.</div>
-        <p>It started with CTF challenges. I didn't know anything about penetration testing, so I solved one flag at a time and got hooked on how systems break.</p>
-        <div class="learned"><em>Learned</em>Hacker mindset · Linux · Web fundamentals</div>
-      </li>
-      <li>
-        <div class="tl-meta"><span class="label">Nov 2019 – Nov 2021</span><span class="loc">Yangon, Myanmar</span></div>
-        <h3>AYA Bank · Innovation Labs</h3>
-        <div class="role">Security Analyst</div>
-        <p>My first security role. I learned <strong>web application and API pentesting</strong> hands-on against real banking systems, and also handled log monitoring in ELK, incident analysis and vendor management.</p>
-        <div class="learned"><em>Learned</em>Web app &amp; API pentest · ELK · Incident response<br><span class="cert-tag">eCPPTv2</span><span class="cert-tag">eWPTXv2</span><span class="cert-tag">OSCP</span></div>
-      </li>
-      <li>
-        <div class="tl-meta"><span class="label">Dec 2021 – Aug 2022</span><span class="loc">Yangon, Myanmar</span></div>
-        <h3>Yoma Bank</h3>
-        <div class="role">Application Security Engineer</div>
-        <p>I went past the application layer into <strong>infrastructure pentesting</strong> and <strong>DevSecOps</strong>: secure design, code scanning, and recommendations that made sense to both engineers and the business.</p>
-        <div class="learned"><em>Learned</em>Infrastructure pentest · DevSecOps · Secure design</div>
-      </li>
-      <li>
-        <div class="tl-meta"><span class="label">Sep 2022 – Apr 2023</span><span class="loc">Nonthaburi, Thailand</span></div>
-        <h3>SECUREiNFO</h3>
-        <div class="role">Cyber Security Specialist</div>
-        <p>A new country, a new language and a very different working environment. I took care of vulnerability assessment, SAST/SCA/DAST scanning, and customer support and consulting.</p>
-        <blockquote>Adapting to a new culture turned out to be as important as any technical skill.</blockquote>
-        <div class="learned"><em>Learned</em>Adaptability · VA scanning · SAST/SCA/DAST · Customer support</div>
-      </li>
-      <li class="peak">
-        <div class="tl-meta"><span class="label">May 2023 – Present</span><span class="loc">Bangkok, Thailand</span></div>
-        <h3>Ascend Money</h3>
-        <div class="role">Senior Offensive Security Engineer</div>
-        <p>I became a <strong>pentest lead</strong>. I took ownership of pentest projects and started creating the project-management documents and deliverables myself. Then I kept going into areas I hadn't explored deeply before.</p>
-        <div class="peak-card">
-          <span class="badge">★ The best chapter so far</span>
-          <ol class="quests">
-            <li><span class="n">01</span><div><h4>Leading pentest projects</h4><p>Scoping, planning, deliverables and reporting, working with international teams.</p></div></li>
-            <li><span class="n">02</span><div><h4>Mobile client-side security</h4><p>New ground for me. I learned it, spoke at BSides Myanmar 2024, then got certified.</p></div></li>
-            <li><span class="n">03</span><div><h4>Active Directory &amp; WiFi</h4><p>AD attack paths and wireless security, both backed by certifications.</p></div></li>
-            <li><span class="n">04</span><div><h4>AI &amp; AWS Cloud</h4><p>I built custom tools and scripts for the team with agentic AI coding, drawing on my own field experience.</p></div></li>
-          </ol>
-        </div>
-        <div class="learned"><em>Learned</em><span class="cert-tag">CREST CRT</span><span class="cert-tag">CPSA</span><span class="cert-tag">CRTP</span><span class="cert-tag">OSWP</span><span class="cert-tag">INE Mobile</span><span class="cert-tag">AWS AI</span><span class="cert-tag">AWS CCP</span></div>
-      </li>
-      <li class="next">
-        <div class="tl-meta"><span class="label">Next</span></div>
-        <h3>Still learning</h3>
-        <p>AI security, cloud attack paths and smarter automation for offensive work. The habit stays the same.</p>
-      </li>
-    </ol>
-  </section>
-
-  <div class="divider" aria-hidden="true"><canvas class="px" data-scene="cup" style="left:62%"></canvas></div>
 
   <section id="projects" class="rv">
     <div class="sec-title"><canvas class="px" data-scene="ring" aria-hidden="true"></canvas><h2>Peak projects</h2></div>
@@ -359,6 +280,58 @@ blockquote{margin:14px 0 0;padding:2px 0 2px 16px;border-left:2px solid var(--ac
         <span class="cta">Watch on YouTube ↗</span>
       </div>
     </a>
+  </section>
+
+  <section id="experience" class="rv">
+    <div class="sec-title"><canvas class="px" data-scene="ring" aria-hidden="true"></canvas><h2>Experience</h2></div>
+    <ol class="xp">
+      <li>
+        <span class="label">May 2023 – Present · Bangkok</span>
+        <h3>Senior Offensive Security Engineer</h3>
+        <div class="co">Ascend Money</div>
+        <ul>
+          <li>Collaborate with international teams and manage pentest projects</li>
+          <li>Application security engineering and consulting</li>
+          <li>Pentest web, mobile apps, APIs and networks, aligned with a standard pentest framework</li>
+          <li>Present findings in high-level and low-level slide decks</li>
+          <li>Prepare recommendations with engineering and business teams</li>
+          <li>Improve team processes, solve problems and run vulnerability assessments</li>
+        </ul>
+      </li>
+      <li>
+        <span class="label">Sep 2022 – Apr 2023 · Nonthaburi</span>
+        <h3>Cyber Security Specialist</h3>
+        <div class="co">SECUREiNFO</div>
+        <ul>
+          <li>VA scanning</li>
+          <li>Source code scanning (SCA, SAST) and automated application scanning (DAST)</li>
+          <li>Review security assessment tools and solve problems with them</li>
+          <li>Security consulting</li>
+        </ul>
+      </li>
+      <li>
+        <span class="label">Dec 2021 – Aug 2022 · Yangon</span>
+        <h3>Application Security Engineer</h3>
+        <div class="co">Yoma Bank</div>
+        <ul>
+          <li>Implement secure applications and secure design</li>
+          <li>Web, mobile, API and infrastructure pentesting and reporting</li>
+          <li>Security code scanning with tools</li>
+          <li>Recommendations from both technical and business points of view</li>
+        </ul>
+      </li>
+      <li>
+        <span class="label">Nov 2019 – Nov 2021 · Yangon</span>
+        <h3>Security Analyst</h3>
+        <div class="co">AYA Bank · Innovation Labs</div>
+        <ul>
+          <li>Web, mobile, API and infrastructure pentesting and reporting</li>
+          <li>Monitoring logs and traffic in ELK</li>
+          <li>Analysis, response and reporting</li>
+          <li>Mitigations, recommendations and vendor management</li>
+        </ul>
+      </li>
+    </ol>
   </section>
 
   <div class="divider" aria-hidden="true"><canvas class="px" data-scene="key" style="left:76%"></canvas></div>
